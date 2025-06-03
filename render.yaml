@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: protohy2-service
+    env: docker
+    region: oregon
+    plan: free
+    repo: https://github.com/adevstack/protohy2
+    branch: main
+
+    envVars:
+      - key: REDIS_HOST
+        value: redis-19324.c16.us-east-1-3.ec2.redns.redis-cloud.com
+      - key: REDIS_PORT
+        value: "19324"
+      - key: REDIS_PASSWORD
+        value: Auaboqh3yk27nifta4duem3mzobnuznv0dmsennrbhm2ioxey3
+      - key: REDIS_URL
+        value: redis://:Auaboqh3yk27nifta4duem3mzobnuznv0dmsennrbhm2ioxey3@redis-19324.c16.us-east-1-3.ec2.redns.redis-cloud.com:19324
+      - key: MONGODB_URI
+        value: mongodb+srv://test1:zJONVUgomzOv2OwR@cluster0.okr2v5c.mongodb.net/
+      - key: MONGODB_DB_NAME
+        value: property_db
+      - key: JWT_SECRET
+        value: 9ba4077f1e722ab4549914a3f834567c39225b34fafdfb9b4d550290e051d6e0
+
+    build:
+      envVars:
+        - key: REDIS_HOST
+          value: redis-19324.c16.us-east-1-3.ec2.redns.redis-cloud.com
+        - key: REDIS_PORT
+          value: "19324"
+        - key: REDIS_PASSWORD
+          value: Auaboqh3yk27nifta4duem3mzobnuznv0dmsennrbhm2ioxey3
+        - key: REDIS_URL
+          value: redis://:Auaboqh3yk27nifta4duem3mzobnuznv0dmsennrbhm2ioxey3@redis-19324.c16.us-east-1-3.ec2.redns.redis-cloud.com:19324
+        - key: MONGODB_URI
+          value: mongodb+srv://test1:zJONVUgomzOv2OwR@cluster0.okr2v5c.mongodb.net/
+        - key: MONGODB_DB_NAME
+          value: property_db
+        - key: JWT_SECRET
+          value: 9ba4077f1e722ab4549914a3f834567c39225b34fafdfb9b4d550290e051d6e0
